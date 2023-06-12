@@ -1,0 +1,6 @@
+myApp:
+  ports:
+    - name: "http"
+      containerPort: 80
+
+containerPorts: "{{ .Values.myApp.ports }}"

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-template-test
+data:
+  direct-reference: {{- include "common.tplvalues.render" (dict "value" .Values.myApp.ports "context" $) | nindent 4 }}
+  indirect-reference: {{- include "common.tplvalues.render" (dict "value" .Values.containerPorts "context" $) | nindent 4 }}
